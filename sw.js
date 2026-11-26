@@ -1,6 +1,6 @@
 // 앱 껍데기만 저장한다. API 요청과 외부 주소는 건드리지 않는다.
-const CACHE = "memotter-mwwyrhpc";
-const SHELL = ["./", "app.js?v=mwwyrhpc", "styles.css?v=mwwyrhpc", "manifest.webmanifest", "icon.svg", "logo.png", "twemoji.woff2", "icon-192.png", "icon-512.png"];
+const CACHE = "memotter-mwx0028b";
+const SHELL = ["./", "app.js?v=mwx0028b", "styles.css?v=mwx0028b", "manifest.webmanifest", "icon.svg", "logo.png", "twemoji.woff2", "icon-192.png", "icon-512.png"];
 self.addEventListener("install", (e) => e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())));
 self.addEventListener("activate", (e) => e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k.startsWith("memotter-") && k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", (e) => {
